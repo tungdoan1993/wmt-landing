@@ -1,0 +1,10 @@
+{
+  "name": "Instant",
+  "kind": "Instant · 51010",
+  "lead": "No evaluation. Trade today — first reward after 1 day.",
+  "points": [
+    "{{target}} target, then withdraw",
+    "Reward share {{share1}} → {{share2}} → {{maxSplit}}",
+    "First reward after 1 day"
+  ]
+}

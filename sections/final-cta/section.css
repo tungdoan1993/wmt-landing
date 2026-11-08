@@ -1,0 +1,6 @@
+.final { padding-top: 0; }
+.final-box { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: clamp(32px, 6vw, 64px); background: var(--card); border: 1px solid var(--line-strong); border-radius: 26px; }
+.final-box h2 { font-size: clamp(2rem, 4.2vw, 3rem); }
+.final-box p { color: var(--muted); font-size: 1.1rem; }
+.final-alt { font-weight: 700; font-size: 15px; }
+.section.final { padding-top: 80px; }

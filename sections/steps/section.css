@@ -1,0 +1,8 @@
+.steps-inner { display: flex; flex-direction: column; gap: 28px; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.step h3 { font-size: 1.2rem; }
+.step p { color: var(--muted); }
+.step-n { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--ink); background: var(--tg); }
+.step:nth-child(2) .step-n { background: var(--yellow); }
+.step:nth-child(3) .step-n { background: var(--green); }

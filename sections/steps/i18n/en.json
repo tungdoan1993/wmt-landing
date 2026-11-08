@@ -1,0 +1,17 @@
+{
+  "title": "Funded in 3 steps",
+  "items": [
+    {
+      "title": "Message our bot",
+      "text": "Answer {{quizQuestions}} questions and get the account that fits you."
+    },
+    {
+      "title": "Register and get your account",
+      "text": "Sign up, pay one fee from {{challengeFrom}} and start trading."
+    },
+    {
+      "title": "Get paid",
+      "text": "Earn up to {{maxSplit}} reward share — paid by bank, USDC or card."
+    }
+  ]
+}

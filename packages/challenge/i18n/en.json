@@ -1,0 +1,10 @@
+{
+  "name": "Challenge",
+  "kind": "2-phase Challenge",
+  "lead": "Lowest cost. Pass 2 phases, earn up to {{maxSplit}} — and get your fee back.",
+  "points": [
+    "Targets: Phase 1 {{p1}} · Phase 2 {{p2}}",
+    "Earn {{challengeSplit}} in Phase 2, {{maxSplit}} when funded",
+    "Fee refunded once you reach {{refundAt}}"
+  ]
+}

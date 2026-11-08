@@ -1,0 +1,4 @@
+.promo-bar { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 14px; padding: 10px 16px; background: var(--yellow); color: var(--ink); font-weight: 700; font-size: 15px; text-align: center; }
+.promo-bar[hidden] { display: none; }
+.promo-bar a { color: var(--ink); text-decoration: underline; font-weight: 800; }
+.promo-timer { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }

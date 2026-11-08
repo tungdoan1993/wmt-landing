@@ -1,0 +1,9 @@
+.offer-inner { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.tabs { display: flex; gap: 4px; padding: 5px; background: var(--card); border: 1px solid var(--line); border-radius: 40px; }
+.tab { min-height: 46px; min-width: 130px; padding: 10px 22px; border: 0; border-radius: 40px; background: transparent; color: var(--text-soft); font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; }
+.tab-yellow[aria-selected="true"] { background: var(--yellow); color: var(--ink); }
+.tab-green[aria-selected="true"] { background: var(--green); color: var(--ink); }
+.pkg-panel { width: 100%; display: flex; flex-direction: column; gap: 22px; }
+.pkg-panel[hidden] { display: none; }
+.pkg-lead { color: var(--muted); text-align: center; max-width: 580px; margin-inline: auto; }
+.pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }

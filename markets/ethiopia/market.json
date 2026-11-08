@@ -1,0 +1,15 @@
+{
+  "code": "am",
+  "path": "am",
+  "languages": ["am", "en"],
+  "telegram": {
+    "bot": "wmtethiopia_bot",
+    "bothelpStart": "",
+    "_bothelpStart": "Paste the start code from BotHelp's direct link (tg://resolve?domain=wmtethiopia_bot&start=THIS_PART). When set, buttons use https://r.bothelp.io/tg?... so UTM tags land in BotHelp subscriber fields."
+  },
+  "video": {
+    "youtubeId": "42cthiLp3Fo",
+    "thumb": "assets/video/ethiopia-payout.jpg",
+    "amount": "$6,052.11"
+  }
+}

@@ -1,0 +1,6 @@
+.tg-float { position: fixed; inset-inline-end: 24px; bottom: 24px; z-index: 40; width: 60px; height: 60px; border-radius: 50%; background: var(--tg); color: var(--ink); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.5); }
+.tg-float:hover { color: var(--ink); background: var(--tg-hover); }
+.mbar { display: none; position: fixed; inset-inline: 0; bottom: 0; z-index: 40; gap: 10px; padding: 10px 12px; background: var(--bg); border-top: 1px solid var(--line); }
+.mbar .btn { flex: 1 1 0; padding-inline: 10px; font-size: 15px; min-height: 50px; }
+.mbar .btn-tg { flex-grow: 1.4; }
+@media (max-width: 768px) { .mbar { display: flex; } .tg-float { display: none; } }

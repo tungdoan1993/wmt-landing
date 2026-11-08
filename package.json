@@ -1,0 +1,12 @@
+{
+  "name": "wmt-landing",
+  "private": true,
+  "type": "module",
+  "description": "WeMasterTrade conversion landing pages — Farsi/EN and Amharic/EN with Telegram (BotHelp) lead capture",
+  "scripts": {
+    "check": "node core/validate.mjs",
+    "build": "node core/build.mjs",
+    "preview": "node core/build.mjs && npx --yes serve dist"
+  },
+  "engines": { "node": ">=18" }
+}

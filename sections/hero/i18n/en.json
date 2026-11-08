@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Real traders. Real payouts.",
+  "title1": "Get funded from *{{challengeFrom}}*.",
+  "title2": "Earn up to *{{maxSplit}}*.",
+  "subtitle": "Trade a funded virtual account up to {{maxSize}}. Payouts in {{payoutHours}} hours on average — with support in your language.",
+  "ctaTelegram": "Get my free plan on Telegram",
+  "ctaNote": "{{quizQuestions}} quick questions · free · reply in your language",
+  "ctaRegister": "Or register now →",
+  "videoLabel": "Play the payout video",
+  "videoCaption": "A real trader payout story"
+}

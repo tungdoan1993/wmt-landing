@@ -1,0 +1,34 @@
+{
+  "_note": "Global settings. Market-specific settings live in markets/<market>/market.json, package prices in packages/<package>/data.json.",
+  "markets": ["iran", "ethiopia"],
+  "sections": ["header", "promo-bar", "hero", "proof", "offer", "steps", "telegram", "faq", "final-cta", "footer", "sticky-bar", "popup"],
+  "offerPackages": ["challenge", "instant"],
+  "links": {
+    "register": "https://my.wemastertrade.com/register/",
+    "terms": "https://faq.wemastertrade.com/terms-and-conditions/",
+    "privacy": "https://faq.wemastertrade.com/our-privacy-policy/",
+    "refund": "https://faq.wemastertrade.com/refund-and-cancellation/"
+  },
+  "vars": {
+    "maxSplit": "90%",
+    "challengeSplit": "30%",
+    "payoutHours": "24",
+    "quizQuestions": "2",
+    "year": "2026"
+  },
+  "tracking": {
+    "gtmId": "",
+    "metaPixelId": ""
+  },
+  "promo": {
+    "enabled": false,
+    "endsAt": ""
+  },
+  "popup": {
+    "enabled": true,
+    "delaySeconds": 20,
+    "exitIntent": true,
+    "scrollPercent": 60
+  },
+  "siteUrl": ""
+}

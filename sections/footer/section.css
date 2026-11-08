@@ -1,0 +1,7 @@
+.site-footer { border-top: 1px solid var(--line); background: #080808; padding-block: 36px; font-size: 12.5px; color: var(--faint); line-height: 1.75; }
+.footer-inner { display: flex; flex-direction: column; gap: 12px; }
+.footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.footer-top strong, .site-footer b { color: var(--text-soft); }
+.footer-top nav { display: flex; flex-wrap: wrap; gap: 16px; }
+.footer-top a { color: var(--text-soft); }
+@media (max-width: 768px) { .site-footer { padding-bottom: 96px; } }

@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "title": "WeMasterTrade prop firm — get funded from {{challengeFrom}}",
+    "description": "2-phase Challenge and Instant funding up to {{maxSize}}. Earn up to {{maxSplit}} reward share, fast payouts and local support on Telegram."
+  },
+  "register": "Register",
+  "telegram": "Chat on Telegram",
+  "langLabel": "Language"
+}

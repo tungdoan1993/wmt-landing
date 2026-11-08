@@ -1,0 +1,11 @@
+{
+  "eyebrow": "እውነተኛ ነጋዴዎች። እውነተኛ ክፍያዎች።",
+  "title1": "ከ*{{challengeFrom}}* ጀምሮ የገንዘብ ድጋፍ ያግኙ።",
+  "title2": "እስከ *{{maxSplit}}* ሽልማት ያግኙ።",
+  "subtitle": "እስከ {{maxSize}} በሚደርስ በገንዘብ የተደገፈ ምናባዊ ሂሳብ ይገበያዩ። ክፍያ በአማካይ በ{{payoutHours}} ሰዓት — በአማርኛ ድጋፍ።",
+  "ctaTelegram": "ነፃ እቅዴን በቴሌግራም አግኝ",
+  "ctaNote": "{{quizQuestions}} አጭር ጥያቄዎች · ነፃ · በአማርኛ መልስ",
+  "ctaRegister": "ወይም አሁኑኑ ይመዝገቡ →",
+  "videoLabel": "የክፍያ ቪዲዮውን አጫውት",
+  "videoCaption": "የእውነተኛ ነጋዴ የክፍያ ታሪክ"
+}

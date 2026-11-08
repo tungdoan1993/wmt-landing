@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "title": "WeMasterTrade ፕሮፕ ፈርም | ፎሬክስ ትሬዲንግ ከ{{challengeFrom}} ጀምሮ",
+    "description": "ባለ 2 ደረጃ ቻሌንጅ እና ፈጣን የገንዘብ ድጋፍ እስከ {{maxSize}}። እስከ {{maxSplit}} የሽልማት ድርሻ፣ ፈጣን ክፍያ እና በቴሌግራም የአማርኛ ድጋፍ።"
+  },
+  "register": "ይመዝገቡ",
+  "telegram": "በቴሌግራም ያናግሩን",
+  "langLabel": "ቋንቋ"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Quick answers",
+  "items": [
+    {
+      "q": "Is this an investment?",
+      "a": "No. You pay a one-time fee and trade a simulated account with virtual funds. You never deposit money to invest."
+    },
+    {
+      "q": "Do I need experience?",
+      "a": "No. Start with the Challenge from {{challengeFrom}} — two clear phases and a {{challengeSplit}} reward share already in Phase 2."
+    },
+    {
+      "q": "How fast do I get paid?",
+      "a": "Payouts take {{payoutHours}} hours on average, by bank transfer, USDC and other stablecoins, or card."
+    },
+    {
+      "q": "Can I talk to someone in my language?",
+      "a": "Yes. Message our Telegram bot and a local advisor replies in your language."
+    }
+  ]
+}

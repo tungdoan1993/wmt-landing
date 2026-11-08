@@ -1,0 +1,9 @@
+.popup { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0,0,0,.8); }
+.popup[hidden] { display: none; }
+.popup-box { position: relative; width: 100%; max-width: 440px; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 34px 26px 26px; text-align: center; background: var(--card); border: 1px solid var(--yellow); border-radius: 24px; }
+.popup-box h2 { font-size: 1.6rem; line-height: 1.25; }
+.popup-box p { color: var(--muted); }
+.popup-box .btn { width: 100%; }
+.popup-close { position: absolute; top: 8px; inset-inline-end: 8px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.popup-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--card-on); color: var(--yellow); font-weight: 700; font-size: 13px; }
+.popup-alt { font-weight: 700; font-size: 14px; color: var(--muted); }

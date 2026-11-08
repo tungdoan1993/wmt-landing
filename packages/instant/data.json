@@ -1,0 +1,15 @@
+{
+  "_verified": "MENA site, Instant 51010 program, checked 22 Oct 2026. price = current price, list = regular price (shown struck through). Sizes limited to $50K on purpose.",
+  "color": "green",
+  "featured": 1,
+  "sizes": [
+    { "label": "$10K", "price": 76, "list": 95 },
+    { "label": "$25K", "price": 196, "list": 245 },
+    { "label": "$50K", "price": 302, "list": 378 }
+  ],
+  "vars": {
+    "target": "10%",
+    "share1": "50%",
+    "share2": "75%"
+  }
+}

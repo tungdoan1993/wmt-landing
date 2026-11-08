@@ -1,0 +1,21 @@
+{
+  "label": "Why traders choose us",
+  "items": [
+    {
+      "value": "{{maxSplit}}",
+      "label": "Max reward share"
+    },
+    {
+      "value": "{{payoutHours}}h",
+      "label": "Average payout time"
+    },
+    {
+      "value": "2025",
+      "label": "Best Instant Funding Prop Firm"
+    },
+    {
+      "value": "ISO",
+      "label": "9001 & 21001 certified"
+    }
+  ]
+}

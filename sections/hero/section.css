@@ -1,0 +1,20 @@
+.hero { padding-block: 64px 56px; }
+.hero-row { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; }
+.hero-copy { flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.eyebrow { align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); color: var(--green); font-size: 14px; font-weight: 700; }
+.hero h1 { font-size: clamp(2.3rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.02em; }
+html[lang="fa"] .hero h1, html[lang="am"] .hero h1 { letter-spacing: 0; font-size: clamp(2rem, 4.4vw, 3.4rem); }
+.hero h1 span { display: block; }
+.hero h1 span + span em { color: var(--green); }
+.hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 540px; }
+.hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.hero-reg { font-weight: 700; font-size: 15px; }
+.hero-video { flex: 1 1 420px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.hero-video figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--text-soft); font-weight: 600; }
+.hero-video figcaption strong { color: var(--green); font-weight: 800; }
+.video { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--line-strong); border-radius: 22px; overflow: hidden; aspect-ratio: 16 / 9; background: #000; cursor: pointer; }
+.video img { width: 100%; height: 100%; object-fit: cover; }
+.video .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,.55); transition: transform .15s ease; }
+.video:hover .play { transform: translate(-50%, -50%) scale(1.06); }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 768px) { .hero { padding-block: 36px 40px; } .hero-cta, .hero-cta .btn { width: 100%; } }

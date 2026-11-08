@@ -1,0 +1,7 @@
+.proof { background: var(--bg-alt); border-block: 1px solid var(--line); }
+.proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; padding-block: 22px; text-align: center; }
+.proof-item { display: flex; flex-direction: column; }
+.proof-item strong { font-family: 'Poppins', sans-serif; font-size: 1.7rem; font-weight: 800; }
+.proof-item:nth-child(1) strong { color: var(--green); }
+.proof-item:nth-child(2) strong { color: var(--yellow); }
+.proof-item span { color: var(--muted); font-size: 14px; }

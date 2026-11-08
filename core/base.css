@@ -1,0 +1,75 @@
+/* ============================================================
+   WeMasterTrade landing — base styles & brand tokens
+   Brand colours/fonts taken from wemastertrade-mena.com.
+   Section-specific styles live in sections/<name>/section.css
+   ============================================================ */
+:root {
+  --bg: #0C0C0C;
+  --bg-alt: #141414;
+  --card: #1E1E1E;
+  --card-on: #282828;
+  --line: #2F2F2F;
+  --line-strong: #4D4D4D;
+  --text: #FFFFFF;
+  --text-soft: #E3E1DA;
+  --muted: #BDBDBD;
+  --faint: #9E9E9E;
+  --yellow: #FACC15;
+  --yellow-hover: #FDE047;
+  --green: #01C246;
+  --tg: #2AABEE;
+  --tg-hover: #4FBBF2;
+  --ink: #0C0C0C;
+  --radius: 18px;
+  --wrap: 1160px;
+  --font-head: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Montserrat', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html[lang="fa"] { --font-head: 'Vazirmatn', 'Poppins', sans-serif; --font-body: 'Vazirmatn', 'Montserrat', sans-serif; }
+html[lang="am"] { --font-head: 'Noto Sans Ethiopic', 'Poppins', sans-serif; --font-body: 'Noto Sans Ethiopic', 'Montserrat', sans-serif; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+h1, h2, h3 { margin: 0; font-family: var(--font-head); line-height: 1.15; }
+html[lang="fa"] h1, html[lang="fa"] h2, html[lang="am"] h1, html[lang="am"] h2 { line-height: 1.35; }
+p { margin: 0; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--yellow); }
+a:hover { color: var(--yellow-hover); }
+:focus-visible { outline: 3px solid var(--tg); outline-offset: 3px; }
+.num { direction: ltr; unicode-bidi: isolate; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 24px; }
+.section { padding-block: 80px; }
+.section-alt { background: var(--bg-alt); border-block: 1px solid var(--line); }
+.h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); text-align: center; }
+.center { text-align: center; }
+.small { font-size: 13px; color: var(--faint); }
+em { font-style: normal; color: var(--yellow); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 24px; border-radius: 40px; border: 0; font-family: inherit; font-size: 16px; font-weight: 800; text-decoration: none; cursor: pointer; transition: transform .15s ease, background-color .15s ease; }
+.btn:active { transform: scale(.98); }
+.btn-lg { min-height: 58px; padding-inline: 30px; font-size: 18px; }
+.btn-tg { background: var(--tg); color: var(--ink); }
+.btn-tg:hover { background: var(--tg-hover); color: var(--ink); }
+.btn-yellow { background: var(--yellow); color: var(--ink); }
+.btn-yellow:hover { background: var(--yellow-hover); color: var(--ink); }
+.btn-green { background: var(--green); color: var(--ink); }
+.btn-green:hover { background: #22d65e; color: var(--ink); }
+.btn-outline { background: transparent; color: var(--text); border: 1px solid var(--line-strong); }
+.btn-outline:hover { color: var(--text); border-color: var(--text-soft); }
+.btn-pulse { animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(42,171,238,.55); } 50% { box-shadow: 0 0 0 12px rgba(42,171,238,0); } }
+@media (prefers-reduced-motion: reduce) { .btn-pulse { animation: none; } html { scroll-behavior: auto; } }
+.icon { flex: 0 0 auto; }
+html[dir="rtl"] .icon-flip { transform: scaleX(-1); }
+.icon-check { color: var(--green); }
+
+/* Market chooser (dist/index.html) */
+.chooser main { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; padding: 24px; }
+.choose-list { display: flex; flex-direction: column; gap: 14px; width: min(100%, 360px); }
+.choose { display: flex; justify-content: center; gap: 8px; padding: 18px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line-strong); color: var(--text); text-decoration: none; font-weight: 700; font-size: 20px; }
+.choose span { color: var(--muted); font-weight: 600; }

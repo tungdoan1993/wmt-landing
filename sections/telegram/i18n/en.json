@@ -1,0 +1,16 @@
+{
+  "eyebrow": "Free on Telegram",
+  "title": "What you get in our bot",
+  "items": [
+    "Your best account in {{quizQuestions}} questions",
+    "Promo codes — bot members get them first",
+    "Real trader payout stories",
+    "A local advisor in your language"
+  ],
+  "cta": "Open the Telegram bot",
+  "note": "No spam. Leave anytime.",
+  "chat1": "Welcome! Have you traded a funded account before?",
+  "chat2": "No, first time",
+  "chat3": "Great start. The {{challengeFrom}} Challenge fits you best — and you earn {{challengeSplit}} in Phase 2.",
+  "chat4": "Get my plan"
+}

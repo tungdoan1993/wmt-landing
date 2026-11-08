@@ -1,0 +1,17 @@
+.tg-box { display: flex; flex-wrap: wrap; gap: 44px; align-items: center; background: var(--card); border: 1px solid var(--line-strong); border-radius: 26px; padding: clamp(24px, 5vw, 52px); }
+.tg-copy { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.tg-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--tg); font-weight: 800; font-size: 14px; }
+.tg-copy h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+.tg-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 1.05rem; }
+.tg-list li { display: flex; gap: 10px; align-items: flex-start; }
+.tg-list .icon { margin-top: 3px; color: var(--tg); }
+.tg-chat { flex: 1 1 300px; max-width: 400px; background: var(--bg); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+.chat-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-weight: 700; }
+.chat-head img { height: 30px; width: auto; }
+.chat-head small { display: block; color: var(--tg); font-size: 12px; font-weight: 600; }
+.chat-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+.bubble { max-width: 86%; padding: 10px 14px; border-radius: 16px; }
+.bubble.bot { align-self: flex-start; background: var(--card-on); border-end-start-radius: 4px; }
+.bubble.me { align-self: flex-end; background: var(--tg); color: var(--ink); font-weight: 600; border-end-end-radius: 4px; }
+.chat-btn { align-self: flex-start; padding: 8px 14px; border-radius: 10px; background: var(--yellow); color: var(--ink); font-weight: 700; }
+@media (max-width: 768px) { .tg-copy .btn { width: 100%; } }

@@ -1,0 +1,19 @@
+/* Package card — shared look for every package (Challenge file holds it; Instant reuses the same classes) */
+.pkg-card { background: var(--card); border: 2px solid var(--line); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+.pkg-card.is-featured { background: var(--card-on); }
+.pkg-yellow.is-featured { border-color: var(--yellow); }
+.pkg-green.is-featured { border-color: var(--green); }
+.pkg-kind { color: var(--muted); font-size: 14px; font-weight: 600; }
+.pkg-size { font-family: 'Poppins', sans-serif; font-size: 2.6rem; font-weight: 800; line-height: 1; }
+.pkg-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; color: var(--faint); font-size: 14px; }
+.pkg-price strong { font-family: 'Poppins', sans-serif; font-size: 2rem; }
+.pkg-yellow .pkg-price strong { color: var(--yellow); }
+.pkg-green .pkg-price strong { color: var(--green); }
+.pkg-price s { color: var(--faint); font-size: 16px; }
+.pkg-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+.pkg-points li { display: flex; gap: 10px; align-items: flex-start; }
+.pkg-points .icon { margin-top: 2px; }
+.pkg-cta { margin-top: auto; border: 1px solid var(--line-strong); background: transparent; color: var(--text); }
+.pkg-cta:hover { color: var(--text); border-color: var(--text-soft); }
+.pkg-yellow.is-featured .pkg-cta { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
+.pkg-green.is-featured .pkg-cta { background: var(--green); color: var(--ink); border-color: var(--green); }
