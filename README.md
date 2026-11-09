@@ -2,13 +2,14 @@
 
 One goal per page: get the visitor into the **Telegram bot** (lead capture → BotHelp sequence) or straight to **registration**.
 
-| Page | Path | Telegram bot |
-|---|---|---|
-| Farsi (RTL) | `/fa/` | @wmtiran_bot |
-| Farsi market, English | `/fa/en/` | @wmtiran_bot |
-| Amharic | `/am/` | @wmtethiopia_bot |
-| Amharic market, English | `/am/en/` | @wmtethiopia_bot |
-| Market chooser | `/` | — |
+**Two separate websites from one repo** — shared design, prices and code; each market is built and hosted as its own site:
+
+| Website | Build command | Pages | Telegram bot |
+|---|---|---|---|
+| Iran site | `MARKET=iran node core/build.mjs` | `/` Farsi (RTL) · `/en/` English | @wmtiran_bot |
+| Ethiopia site | `MARKET=ethiopia node core/build.mjs` | `/` Amharic · `/en/` English | @wmtethiopia_bot |
+
+Without `MARKET`, everything is built into one combined site (`/fa/`, `/am/`, chooser at `/`) — handy for previews.
 
 ## Folder map — where to edit what
 
@@ -50,9 +51,19 @@ node core/build.mjs        # writes dist/
 npx serve dist             # preview at http://localhost:3000/fa/  (add #popup to see the pop-up)
 ```
 
-## Hosting
+## Hosting — two Cloudflare Pages projects, same repo
 
-Cloudflare Pages or Netlify (free, private repo OK): build command `node core/build.mjs`, output `dist`. Every pull request gets a preview link; merging to `main` goes live.
+Create **two** projects in Cloudflare (Workers & Pages → Create → Pages → Connect to Git → `wmt-landing`), each with:
+
+| Setting | Iran project | Ethiopia project |
+|---|---|---|
+| Project name | `wmt-iran` | `wmt-ethiopia` |
+| Build command | `node core/build.mjs` | `node core/build.mjs` |
+| Output directory | `dist` | `dist` |
+| Environment variable | `MARKET` = `iran` | `MARKET` = `ethiopia` |
+| Custom domain | your Iran domain | your Ethiopia domain |
+
+Put each domain in `markets/<market>/market.json` → `siteUrl` (enables hreflang SEO tags). One push to `main` updates both sites; each pull request gets a preview link on both.
 
 ## Conversion features
 

@@ -32,6 +32,9 @@ const readText = (p) => readFileSync(join(ROOT, p), 'utf8');
 const exists = (p) => existsSync(join(ROOT, p));
 
 export const config = readJson('site.config.json');
+// Build ONE market as its own website (pages at the root):  MARKET=iran node core/build.mjs
+// Without MARKET every market is built into one site under /<path>/ (plus a chooser at /).
+export const SINGLE = process.env.MARKET || (process.argv.find((a) => a.startsWith('--market=')) || '').split('=')[1] || '';
 const RTL = new Set(['fa', 'ar', 'ur']);
 const LANG_NAME = { en: 'English', fa: 'فارسی', am: 'አማርኛ' };
 const FONTS = {
@@ -157,10 +160,13 @@ function renderPackages(ctx) {
   return `<div class="tabs" role="tablist" aria-label="${textToAttr(ctx.text.tabsLabel, ctx.vars, 'offer tabsLabel')}">${tabs}</div>${panels}`;
 }
 
+// Folder of a market/language page, relative to the site root ('' = the root itself)
+const pageDir = (m, l) => (m.path ? m.path + '/' : '') + (l === m.languages[0] ? '' : l + '/');
+
 function renderLangSwitch(ctx) {
   const m = ctx.market;
   return `<nav class="lang-switch" aria-label="${textToAttr(ctx.text.langLabel, ctx.vars, 'header langLabel')}">` + m.languages.map((l) => {
-    const href = ctx.root + m.path + '/' + (l === m.languages[0] ? '' : l + '/');
+    const href = (ctx.root + pageDir(m, l)) || './';
     return `<a href="${href}" lang="${l}" hreflang="${l}"${l === ctx.lang ? ' aria-current="true"' : ''}>${LANG_NAME[l]}</a>`;
   }).join('') + '</nav>';
 }
@@ -186,10 +192,12 @@ function trackingHead() {
   return h;
 }
 
-export function pagesList() {
-  return config.markets.map(loadMarket).flatMap((m) => m.languages.map((lang) => ({
-    market: m, lang, out: `${m.path}/${lang === m.languages[0] ? '' : lang + '/'}index.html`
-  })));
+export function pagesList(single = SINGLE) {
+  if (single && !config.markets.includes(single)) throw new Error(`Unknown MARKET "${single}" — use one of: ${config.markets.join(', ')}`);
+  return (single ? [single] : config.markets).map(loadMarket).flatMap((m) => {
+    if (single) m.path = '';
+    return m.languages.map((lang) => ({ market: m, lang, out: pageDir(m, lang) + 'index.html' }));
+  });
 }
 
 export function renderPage({ market, lang, out }) {
@@ -207,8 +215,9 @@ export function renderPage({ market, lang, out }) {
     lang, market: market.code, popup: config.popup,
     promo: config.promo.enabled ? config.promo : null
   };
-  const hreflang = config.siteUrl
-    ? market.languages.map((l) => `<link rel="alternate" hreflang="${l}" href="${esc(config.siteUrl)}/${market.path}/${l === market.languages[0] ? '' : l + '/'}">`).join('\n')
+  const siteUrl = market.siteUrl || config.siteUrl;
+  const hreflang = siteUrl
+    ? market.languages.map((l) => `<link rel="alternate" hreflang="${l}" href="${esc(siteUrl.replace(/\/$/, ''))}/${pageDir(market, l)}">`).join('\n')
     : '';
   return `<!doctype html>
 <html lang="${lang}" dir="${RTL.has(lang) ? 'rtl' : 'ltr'}">
@@ -272,9 +281,15 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     writeFileSync(file, renderPage(page));
     console.log('built', page.out);
   }
-  writeFileSync(join(DIST, 'index.html'), renderIndex(pages));
+  if (!SINGLE) writeFileSync(join(DIST, 'index.html'), renderIndex(pages));
   copyDir(join(ROOT, 'assets'), join(DIST, 'assets'));
+  if (SINGLE) { // a single-market site doesn't ship the other markets' videos
+    for (const id of config.markets.filter((x) => x !== SINGLE)) {
+      const v = loadMarket(id).video;
+      for (const f of [v.file, v.thumb]) if (f && existsSync(join(DIST, f))) rmSync(join(DIST, f));
+    }
+  }
   writeFileSync(join(DIST, 'assets/site.css'), bundle('css', 'core/base.css'));
   writeFileSync(join(DIST, 'assets/site.js'), bundle('js', 'core/app.js'));
-  console.log('done → dist/');
+  console.log(`done → dist/${SINGLE ? ` (single site: ${SINGLE})` : ''}`);
 }

@@ -13,3 +13,5 @@ jobs:
           node-version: 20
       - run: node core/validate.mjs
       - run: node core/build.mjs
+      - run: MARKET=iran node core/build.mjs
+      - run: MARKET=ethiopia node core/build.mjs
