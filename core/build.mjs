@@ -166,12 +166,16 @@ function renderLangSwitch(ctx) {
 }
 
 function renderVideo(ctx) {
+  // Self-hosted MP4 when market.json → video.file is set (works where YouTube is blocked), else YouTube.
   const v = ctx.market.video;
   const alt = textToAttr(ctx.text.videoCaption, ctx.vars, 'hero videoCaption');
-  return `<button type="button" class="video" data-youtube="${esc(v.youtubeId)}" aria-label="${textToAttr(ctx.text.videoLabel, ctx.vars, 'hero videoLabel')}">
+  const label = textToAttr(ctx.text.videoLabel, ctx.vars, 'hero videoLabel');
+  const src = v.file ? `data-src="${ctx.root}${esc(v.file)}"` : `data-youtube="${esc(v.youtubeId)}"`;
+  const fallback = v.file ? `${ctx.root}${esc(v.file)}` : `https://www.youtube.com/watch?v=${esc(v.youtubeId)}`;
+  return `<button type="button" class="video" ${src} aria-label="${label}">
 <img src="${ctx.root}${esc(v.thumb)}" alt="${alt}" width="960" height="540" fetchpriority="high">
 <span class="play" aria-hidden="true">${ICONS.play}</span></button>
-<noscript><a href="https://www.youtube.com/watch?v=${esc(v.youtubeId)}">YouTube</a></noscript>`;
+<noscript><a href="${fallback}">${label}</a></noscript>`;
 }
 
 function trackingHead() {

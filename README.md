@@ -37,7 +37,7 @@ docs/                       language research, site scrape
 Examples:
 - **Change a price** → `packages/challenge/data.json`. Every page, button and FAQ that mentions it updates.
 - **Change the Farsi headline** → `sections/hero/i18n/fa.json` → `title1` / `title2`.
-- **Swap the Iran payout video** → `markets/iran/market.json` → `video` (+ thumbnail in `assets/video/`).
+- **Swap the Iran payout video** → put the MP4 in `assets/video/` and point `markets/iran/market.json` → `video.file` at it (+ thumbnail). Compress first: `ffmpeg -i in.mp4 -vf scale=-2:720 -c:v libx264 -crf 27 -maxrate 420k -bufsize 840k -c:a aac -b:a 64k -movflags +faststart out.mp4`. Keep each file under 25 MB (Cloudflare Pages limit).
 - **Remove a section** → delete its name from `site.config.json` → `sections`.
 - **Run a promotion** → `site.config.json` → `promo.enabled: true`, `endsAt`, and the text in `sections/promo-bar/i18n/*.json`.
 
@@ -58,7 +58,7 @@ Cloudflare Pages or Netlify (free, private repo OK): build command `node core/bu
 
 - Telegram is the primary action everywhere: header, hero (pulsing), Telegram section, final call to action, closing pop-up (20s / exit intent / 60% scroll on mobile, once per session), floating button (desktop), sticky bar (mobile).
 - Every Telegram and register link says which button was clicked (`utm_content`) and carries the visitor's ad source (`utm_source`, `utm_campaign`) into BotHelp and registration.
-- Payout video loads YouTube only after a click (fast first load).
+- Payout video loads only after a click (fast first load). **Iran plays a self-hosted MP4** (`assets/video/iran-payout.mp4`, 720p, ~20 MB) because YouTube is filtered in Iran; Ethiopia uses YouTube until an MP4 is added (`markets/ethiopia/market.json` → `video.file`).
 - Accounts limited to $10K–$50K: Challenge $45 / $100 / $175 · Instant 51010 $76 / $196 / $302.
 - Events for GA4/GTM and Meta Pixel: `telegram_click` (Pixel `Lead`), `register_click` (Pixel `InitiateCheckout`), `package_tab`, `video_play`, `popup_open`.
 

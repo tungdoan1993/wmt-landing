@@ -1,13 +1,18 @@
 {
   "code": "fa",
   "path": "fa",
-  "languages": ["fa", "en"],
+  "languages": [
+    "fa",
+    "en"
+  ],
   "telegram": {
     "bot": "wmtiran_bot",
     "bothelpStart": "",
     "_bothelpStart": "Paste the start code from BotHelp's direct link (tg://resolve?domain=wmtiran_bot&start=THIS_PART). When set, buttons use https://r.bothelp.io/tg?... so UTM tags land in BotHelp subscriber fields."
   },
   "video": {
+    "file": "assets/video/iran-payout.mp4",
+    "_file": "Self-hosted MP4 (YouTube is filtered in Iran). 720p H.264, ~20 MB, plays only after a click. Remove 'file' to fall back to YouTube.",
     "youtubeId": "gLPr75bPn9s",
     "thumb": "assets/video/iran-payout.jpg",
     "amount": "$10,116.79"

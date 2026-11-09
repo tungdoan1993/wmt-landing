@@ -1,7 +1,10 @@
 {
   "code": "am",
   "path": "am",
-  "languages": ["am", "en"],
+  "languages": [
+    "am",
+    "en"
+  ],
   "telegram": {
     "bot": "wmtethiopia_bot",
     "bothelpStart": "",
@@ -10,6 +13,7 @@
   "video": {
     "youtubeId": "42cthiLp3Fo",
     "thumb": "assets/video/ethiopia-payout.jpg",
-    "amount": "$6,052.11"
+    "amount": "$6,052.11",
+    "_file": "Add \"file\": \"assets/video/ethiopia-payout.mp4\" to self-host the video instead of YouTube."
   }
 }
